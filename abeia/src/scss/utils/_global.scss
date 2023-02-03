@@ -1,0 +1,15 @@
+//Será usado em todas as páginas
+*{
+  font-family: Barrio;
+}
+//svg:imagemzinha, botao
+a,svg,button{
+  transition: 0.3s;
+}
+.container{
+  width: 100%;
+  max-width: 74rem;
+  margin: auto;//Centraliza
+  //Espaçamento nas bordas laterais do container:
+  padding: 0 1rem;//Colocar 4: cima direita baixo esquerda - 2: cima lado
+}

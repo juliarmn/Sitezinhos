@@ -1,0 +1,48 @@
+.header{//Faz o header do site
+  background-color: $primary;//Colocar a cor de fundo
+  padding: 1rem 0;
+  
+  .container{//Não tem o nome do pai, não precisa do &
+    display: flex;
+    justify-content: space-between;//Espaça as coisas -> espaçou a logo dos link
+  }
+  &__logo{//Logo é classe e está dentro de header - &para referenciar o anterior
+    max-width: 3.5rem;//Max para ficar responsivo - limita o espaço
+    width: 100%;//Ocupar 100% do espaço
+    //hover: quando passar por cima
+    transition: 0.3s;
+    &:hover{
+      transform: scale(1.1);//aumenta 10% (1.1) - scale
+    }
+    img{//Imagem não é classe e está dentro de logo - é uma tag
+      width: 100%;
+    }
+  }
+  &__links{
+    display: flex;//Um do lado do outro
+    align-items: center;//Coloca centralizado
+    gap: 1rem;//Distancia entre os links
+    a{
+      color: black;
+      text-decoration: none;//Tirar a linha
+      font-weight: 800;
+      svg{
+        width: 2rem;
+      }
+      &:hover{
+        color: white;
+      }
+    }
+    li:last-child a{//último filho = o último link
+      background-color: $primary-dark;
+      padding: 0.5rem 1rem;//Para aumentar a borda
+      border-radius: 100px;//para arredondar o botão
+      border: .125rem dashed $primary-dark;//alt-z = troca de px para rem
+      &:hover{
+        background-color: transparent;
+        color: $primary-dark;
+      }
+    }
+
+  }
+}
