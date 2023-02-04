@@ -5,6 +5,7 @@
   .container{//Não tem o nome do pai, não precisa do &
     display: flex;
     justify-content: space-between;//Espaça as coisas -> espaçou a logo dos link
+    align-items: center;
   }
   &__logo{//Logo é classe e está dentro de header - &para referenciar o anterior
     max-width: 3.5rem;//Max para ficar responsivo - limita o espaço
@@ -43,41 +44,38 @@
         color: $primary-dark;
       }
     }
-    &__mobile-button{
-      display: none;
-    }
-    @media(max-width: 638px){//Determinar vizualização no celular
-      &__mobile-button{//botão no celulare
-        background: none;
-        border: none;
-        display: flex;
-        width: 33px;
-        height: 25px;
-        flex-direction: column;//
-        align-items: center;
-        justify-content: center;//
-        position: relative;
-        gap: 0.3rem;
-        span{
-          border-radius: 0.5px;
-          width: 100%;
-          height:0.5rem;
-          background-color: black;
-          transition: 0.3s;
-          position:absolute;
-          &:first-child{//parte de cima
-            position: absolute;
-            top: 0;
-          }
-          &:last-child{//parte de baixo
-            position: absolute;
-            bottom: 0;
-          }
+  }
+  &__mobile-button{
+    display: none;
+  }
+  @media(max-width: 638px){//Determinar vizualização no celular
+    &__mobile-button{//botão no celulare
+      background: none;
+      border: none;
+      padding: 0;
+      width: 33px;
+      height: 25px;
+      position: relative;
+      display: block;
+      span{
+        background-color: black;
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        border-radius: .5rem;
+        &:first-child{
+          top: 0;
         }
-        &.active span{
-          
+        &:nth-child(2){
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &:last-child{
+          bottom: 0;
         }
       }
+      
     }
   }
 }
