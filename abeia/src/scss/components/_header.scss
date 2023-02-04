@@ -75,7 +75,23 @@
           bottom: 0;
         }
       }
-      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &.active span{
+        &:nth-child(1){
+          top: 9px;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2){
+          width: 0;
+        }
+        &:nth-child(3){
+          transform: rotate(-45deg);
+          bottom: 9px;
+        }
+      }
     }
   }
 }
