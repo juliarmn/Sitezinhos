@@ -128,10 +128,6 @@ a, svg, button {
     height: 25px;
     position: relative;
     display: block;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
   .header__mobile-button span {
     background-color: black;
@@ -140,6 +136,7 @@ a, svg, button {
     position: absolute;
     left: 0;
     border-radius: 0.5rem;
+    transition: 0.3s;
   }
   .header__mobile-button span:first-child {
     top: 0;
@@ -160,6 +157,6 @@ a, svg, button {
   }
   .header__mobile-button.active span:nth-child(3) {
     transform: rotate(-45deg);
-    bottom: 9px;
+    bottom: 11.5px;
   }
 }
