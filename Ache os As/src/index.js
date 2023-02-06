@@ -31,5 +31,4 @@ function addClassToElement(elem, className) {
 }
 
 function addIdToElement(elem, id) {
-
 }
