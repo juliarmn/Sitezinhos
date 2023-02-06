@@ -73,6 +73,7 @@ a, svg, button {
 .header {
   background-color: #f7b335;
   padding: 1rem 0;
+  position: relative;
 }
 .header .container {
   display: flex;
@@ -120,6 +121,31 @@ a, svg, button {
   display: none;
 }
 @media (max-width: 638px) {
+  .header__links {
+    position: absolute;
+    background-color: #f7b335;
+    flex-direction: column;
+    right: 0;
+    top: 99%;
+    height: calc(100vh - 6.0425rem);
+    width: 100vh;
+    max-width: 10rem;
+    align-items: flex-start;
+    padding: 1rem 1rem 5rem 1rem;
+    transform: translateX(100%);
+    transition: 0.3s;
+  }
+  .header__links.active {
+    transform: translateX(0);
+  }
+  .header__links li:last-child {
+    margin-top: auto;
+  }
+  .header__links li:last-child, .header__links li:last-child a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
   .header__mobile-button {
     background: none;
     border: none;

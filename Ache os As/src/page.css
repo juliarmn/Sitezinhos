@@ -1,0 +1,91 @@
+/* Variáveis: */
+/* CSS cria as cartas estaticamente */
+:root {
+  --card-width: 157px;
+  /*Peguei de acordo com o vídeo*/
+  --card-height: 220px;
+  --num-cards: 4;
+  --card-space-horizontal=6.25rem;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  height: 55%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-cointainer {
+  /* margin-top: 1.875rem; */
+  position: relative;
+  height: 100%;
+  width: calc(var(--card-width) * (var(--num-cards) / 2) + var(--card-space-horizontal));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "a b"
+                       "c d";
+}
+/* Cada carta fica em uma célula específica */
+.card-pos-a{
+  grid-area: a;
+}
+
+.card-pos-b{
+  grid-area: b;
+}
+
+.card-pos-c{
+  grid-area: c;
+}
+
+.card-pos-d{
+  grid-area: d;
+}
+
+.card {
+  position: absolute;
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 1000px;
+  /*Verificar depois*/
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  /*Uniu ambas as partes da carta em 1 só*/
+  position: absolute;
+  /*Para girar a carta*/
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-img {
+  height: 100%;
+  /*Diminuiu o tamanho*/
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  /*Gira a carta e coloca de frente*/
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+  /*Gira a carta ao passar o mouse*/
+}
