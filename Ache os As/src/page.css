@@ -5,11 +5,12 @@
   /*Peguei de acordo com o vídeo*/
   --card-height: 220px;
   --num-cards: 4;
-  --card-space-horizontal=6.25rem;
+  --card-space-horizontal: 6.25rem;
 }
 
 body {
   height: 100vh;
+  /* font-family: ; */
 }
 
 main {
@@ -32,18 +33,28 @@ main {
 /* Cada carta fica em uma célula específica */
 .card-pos-a{
   grid-area: a;
+  background-color: aquamarine;
 }
 
 .card-pos-b{
   grid-area: b;
+  background-color: pink;
 }
 
 .card-pos-c{
   grid-area: c;
+  background-color: orange;
 }
 
 .card-pos-d{
   grid-area: d;
+  background-color: green;
+}
+
+.card-pos-a, .card-pos-b, .card-pos-c, .card-pos-d{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -53,6 +64,7 @@ main {
   perspective: 1000px;
   /*Verificar depois*/
   cursor: pointer;
+  transition: transform 0.6s ease-in-out;
 }
 
 .card-inner {
@@ -85,7 +97,7 @@ main {
   /*Gira a carta e coloca de frente*/
 }
 
-.card:hover .card-inner {
+.card-inner.flip-it {
   transform: rotateY(180deg);
   /*Gira a carta ao passar o mouse*/
 }

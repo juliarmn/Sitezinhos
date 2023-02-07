@@ -1,115 +1,161 @@
-.header{//Faz o header do site
-  background-color: $primary;//Colocar a cor de fundo
+.header {
+  //Faz o header do site
+  background-color: none; //Colocar a cor de fundo
   padding: 1rem 0;
   position: relative;
-  .container{//Não tem o nome do pai, não precisa do &
-    display: flex;
-    justify-content: space-between;//Espaça as coisas -> espaçou a logo dos link
-    align-items: center;
-  }
-  &__logo{//Logo é classe e está dentro de header - &para referenciar o anterior
-    max-width: 3.5rem;//Max para ficar responsivo - limita o espaço
-    width: 100%;//Ocupar 100% do espaço
+
+  &__logo {
+    display: block;
+    padding: 1rem;
+    //Logo é classe e está dentro de header - &para referenciar o anterior
+    max-width: 15rem; //Max para ficar responsivo - limita o espaço
+    width: 100%; //Ocupar 100% do espaço
     //hover: quando passar por cima
     transition: 0.3s;
-    &:hover{
-      transform: scale(1.1);//aumenta 10% (1.1) - scale
+    margin: 0 auto;
+
+    &:hover {
+      transform: scale(1.1); //aumenta 10% (1.1) - scale
     }
-    img{//Imagem não é classe e está dentro de logo - é uma tag
+
+    img {
+      //Imagem não é classe e está dentro de logo - é uma tag
       width: 100%;
     }
   }
-  &__links{
-    display: flex;//Um do lado do outro
-    align-items: center;//Coloca centralizado
-    gap: 1rem;//Distancia entre os links
-    a{
+
+  nav {
+    border-top: 1px dashed rgb(244, 206, 137);
+    padding-top: 2px;
+  }
+
+  &__links {
+
+    display: flex; //Um do lado do outro
+    align-items: center; //Coloca centralizado
+    justify-content: center;
+    padding: 0.1rem;
+    gap: 3rem; //Distancia entre os links
+
+    a {
       color: black;
-      text-decoration: none;//Tirar a linha
-      font-weight: 800;
-      svg{
+      height: 100%;
+      text-decoration: none; //Tirar a linha
+      font-weight: 999;
+
+      svg {
         width: 2rem;
       }
-      &:hover{
-        color: white;
+
+      &:hover {
+        color: rgb(244, 206, 137);
       }
     }
-    li:last-child a{//último filho = o último link
-      background-color: $primary-dark;
-      padding: 0.5rem 1rem;//Para aumentar a borda
-      border-radius: 100px;//para arredondar o botão
-      border: .125rem dashed $primary-dark;//alt-z = troca de px para rem
-      &:hover{
+
+    li:last-child a {
+      //último filho = o último link
+      background-color: rgb(244, 206, 137);
+      padding: 0.5rem 1rem; //Para aumentar a borda
+      border-radius: 100px; //para arredondar o botão
+      border: .125rem dashed rgb(244, 206, 137); //alt-z = troca de px para rem
+
+      &:hover {
         background-color: transparent;
-        color: $primary-dark;
+        color: rgb(244, 206, 137);
       }
     }
   }
-  &__mobile-button{
+
+  .container {
+    //Não tem o nome do pai, não precisa do &
+    display: flex;
+    justify-content: center; //Espaça as coisas -> espaçou a logo dos link
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  &__mobile-button {
     display: none;
   }
-  @media(max-width: 638px){//Determinar vizualização no celular
-    &__links{
-      position: absolute;
-      background-color: $primary;
+
+  @media(max-width: 638px) {
+
+    //Determinar vizualização no celular
+    &__links {
+      position: relative;
+      background-color: none;
       flex-direction: column;
       right: 0;
       top: 99%;
       height: calc(100vh - 6.0425rem);
       width: 100vh;
       max-width: 10rem;
-      align-items: flex-start;//Tava center foi pro start
+      align-items: flex-start; //Tava center foi pro start
       padding: 1rem 1rem 5rem 1rem;
       transform: translateX(100%);
       transition: 0.3s;
-      &.active{
+
+      &.active {
         transform: translateX(0);
       }
-      li:last-child{
+
+      li:last-child {
         margin-top: auto;
-        &,a{
+
+        &,
+        a {
           display: block;
           text-align: center;
           width: 100%;
         }
       }
     }
-    &__mobile-button{//botão no celulare
-      background: none;
+
+    &__mobile-button {
+      //botão no celulare
+      margin-left: 1rem;
+      background-color: none;
       border: none;
       padding: 0;
       width: 33px;
       height: 25px;
       position: relative;
       display: block;
-      span{
-        background-color: black;
+
+      span {
+        background-color: rgb(72, 38, 1);
         height: 5px;
         width: 100%;
         position: absolute;
         left: 0;
         border-radius: .5rem;
         transition: 0.3s;
-        &:first-child{
+
+        &:first-child {
           top: 0;
         }
-        &:nth-child(2){
+
+        &:nth-child(2) {
           top: 50%;
           transform: translateY(-50%);
         }
-        &:last-child{
+
+        &:last-child {
           bottom: 0;
         }
       }
-      &.active span{
-        &:nth-child(1){
+
+      &.active span {
+        &:nth-child(1) {
           top: 9px;
           transform: rotate(45deg);
         }
-        &:nth-child(2){
+
+        &:nth-child(2) {
           width: 0;
         }
-        &:nth-child(3){
+
+        &:nth-child(3) {
           transform: rotate(-45deg);
           bottom: 11.5px;
         }

@@ -56,7 +56,7 @@ table {
 }
 
 * {
-  font-family: Barrio;
+  font-family: Poppins;
 }
 
 a, svg, button {
@@ -71,19 +71,17 @@ a, svg, button {
 }
 
 .header {
-  background-color: #f7b335;
+  background-color: none;
   padding: 1rem 0;
   position: relative;
 }
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .header__logo {
-  max-width: 3.5rem;
+  display: block;
+  padding: 1rem;
+  max-width: 15rem;
   width: 100%;
   transition: 0.3s;
+  margin: 0 auto;
 }
 .header__logo:hover {
   transform: scale(1.1);
@@ -91,39 +89,52 @@ a, svg, button {
 .header__logo img {
   width: 100%;
 }
+.header nav {
+  border-top: 1px dashed rgb(244, 206, 137);
+  padding-top: 2px;
+}
 .header__links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  padding: 0.1rem;
+  gap: 3rem;
 }
 .header__links a {
   color: black;
+  height: 100%;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 999;
 }
 .header__links a svg {
   width: 2rem;
 }
 .header__links a:hover {
-  color: white;
+  color: rgb(244, 206, 137);
 }
 .header__links li:last-child a {
-  background-color: #e08200;
+  background-color: rgb(244, 206, 137);
   padding: 0.5rem 1rem;
   border-radius: 100px;
-  border: 0.125rem dashed #e08200;
+  border: 0.125rem dashed rgb(244, 206, 137);
 }
 .header__links li:last-child a:hover {
   background-color: transparent;
-  color: #e08200;
+  color: rgb(244, 206, 137);
+}
+.header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
 }
 .header__mobile-button {
   display: none;
 }
 @media (max-width: 638px) {
   .header__links {
-    position: absolute;
-    background-color: #f7b335;
+    position: relative;
+    background-color: none;
     flex-direction: column;
     right: 0;
     top: 99%;
@@ -141,13 +152,15 @@ a, svg, button {
   .header__links li:last-child {
     margin-top: auto;
   }
-  .header__links li:last-child, .header__links li:last-child a {
+  .header__links li:last-child,
+.header__links li:last-child a {
     display: block;
     text-align: center;
     width: 100%;
   }
   .header__mobile-button {
-    background: none;
+    margin-left: 1rem;
+    background-color: none;
     border: none;
     padding: 0;
     width: 33px;
@@ -156,7 +169,7 @@ a, svg, button {
     display: block;
   }
   .header__mobile-button span {
-    background-color: black;
+    background-color: rgb(72, 38, 1);
     height: 5px;
     width: 100%;
     position: absolute;
@@ -184,5 +197,106 @@ a, svg, button {
   .header__mobile-button.active span:nth-child(3) {
     transform: rotate(-45deg);
     bottom: 11.5px;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+.main__banner {
+  height: 100 vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+.main__banner__box {
+  position: absolute;
+  width: 28.125rem;
+  height: 28.125rem;
+}
+.main__banner__box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000, transparent);
+  opacity: 0.1;
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+.main__banner__box__circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff, #e4e3e8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+.main__banner__box__circle::before {
+  content: "";
+  position: absolute;
+  top: 0.3125rem;
+  bottom: 0.3125rem;
+  left: 0.3125rem;
+  right: 0.3125rem;
+  background: linear-gradient(315deg, #fff, #e4e3e8);
+  border-radius: 50%;
+}
+.main__banner__box__circle img {
+  position: absolute;
+  z-index: 2;
+  height: 100%;
+  image-resolution: 100%;
+}
+.main__banner i {
+  height: 100vh;
+  position: absolute;
+  background: rgb(244, 206, 137);
+  border-radius: 100%;
+  -webkit-animation: animate linear infinite;
+          animation: animate linear infinite;
+}
+.main__banner i:nth-child(even) {
+  background: transparent;
+  border: 1px solid rgb(244, 206, 137);
+}
+@-webkit-keyframes animate {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-2220);
+    opacity: 0;
+  }
+}
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-2220);
+    opacity: 0;
   }
 }

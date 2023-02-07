@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="./src/images/abeinha.png">
+  <link rel="icon" type="image/x-icon" href="./src/images/logo-removebg-preview.png">
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Familjen+Grotesk:wght@400;500;600;700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barrio&family=Courgette&family=Familjen+Grotesk:wght@500;600;700&family=Poppins:wght@100;300&display=swap"
     rel="stylesheet">
 
   <!-- SCRIPTS -->
@@ -21,10 +22,14 @@
 
 <body>
   <header class="header">
+    <!-- <nav class="header__sides">
+      <img src="src/images/img-removebg-preview.png">
+    </nav> -->
+    <a class="header__logo" href="/" title="Bee">
+      <img src="src/images/logo_abeia_2-removebg-preview.png">
+
+    </a>
     <nav class="container">
-      <a class="header__logo" href="/" title="Bee">
-        <img src="src/images/abeinha.png">
-      </a>
       <ul class="header__links">
         <li>
           <a href="#" title="Home">
@@ -34,6 +39,35 @@
         <li>
           <a href="#" title="Sobre">
             Sobre
+          </a>
+        <li>
+          <a href="#" title="Espécies">
+            Espécies
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Mel">
+            Mel
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Importância">
+            Importância
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Ecologia">
+            Ecologia
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Polinização">
+            Polinização
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Riscos">
+            Riscos
           </a>
         </li>
         <li>
@@ -54,6 +88,40 @@
       </button>
     </nav>
   </header>
+  <main class="main">
+    <section class="main__banner">
+      <div class="main__banner__box">
+        <div class="main__banner__box__circle">
+          <img src="src/images/abelhas-removebg-preview.png">
+        </div>
+      </div>
+    </section>
+    <script>
+      function bubbles(){
+        var count = 200;
+        var section = document.querySelector('section')
+        var i = 0;
+        while (i < count) {
+          var bubble = document.createElement('i');
+          var x = Math.floor(Math.random() * window.innerWidth);
+          var y = Math.floor(Math.random() * window.innerHight);
+
+          var size = Math.random() * 10;
+          bubble.style.left = x + 'px';
+          bubble.style.top = y + 'px';
+          bubble.style.width = 1 + size + 'px';
+          bubble.style.height = 1 + size + 'px';
+          
+          bubble.style.animationDuration = 5+size+'s'
+          bubble.style.animationDelay = -size+'s'
+
+          section.appendChild(bubble);
+          i++
+        }
+      }
+      bubbles()
+    </script>
+  </main>
 </body>
 
 </html>
