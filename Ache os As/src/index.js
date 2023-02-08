@@ -75,7 +75,6 @@ function addCardToGridCell(card) {
   const cardPosElem = document.querySelector(cardPositionClassName)
   addChildElement(cardPosElem, card)
 }
-
 function mapCardIdToGridCell(card){
   if(card.id == 1) {
     return '.card-pos-a'

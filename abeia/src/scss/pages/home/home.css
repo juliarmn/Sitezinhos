@@ -153,7 +153,7 @@ a, svg, button {
     margin-top: auto;
   }
   .header__links li:last-child,
-.header__links li:last-child a {
+  .header__links li:last-child a {
     display: block;
     text-align: center;
     width: 100%;
@@ -200,16 +200,14 @@ a, svg, button {
   }
 }
 
-body {
-  overflow: hidden;
-}
-
 .main__banner {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: #f1f1f1;
+  position: relative;
+  overflow: hidden;
 }
 .main__banner__box {
   position: absolute;
@@ -259,28 +257,11 @@ body {
   position: absolute;
   background: rgb(244, 206, 137);
   border-radius: 100%;
-  -webkit-animation: animate linear infinite;
-          animation: animate linear infinite;
+  animation: animate linear infinite;
 }
 .main__banner i:nth-child(even) {
   background: transparent;
   border: 1px solid rgb(244, 206, 137);
-}
-@-webkit-keyframes animate {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-2220%);
-    opacity: 0;
-  }
 }
 @keyframes animate {
   0% {
