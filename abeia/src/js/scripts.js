@@ -27,11 +27,11 @@ mobileButton.addEventListener("click", ()=>{
 });
 
 function bubbles(){
-  var count = 900;
+  var count = 400;
   var section = document.querySelector('section')
   var i = 0;
   while (i < count) {
-    var bubble = document.createElement('i');
+    var bubble = document.createElement('span');
     var x = Math.floor(Math.random() * window.innerWidth);
     var y = Math.floor(Math.random() * window.innerHeight);
     var size = Math.random() * 10;

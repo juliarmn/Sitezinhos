@@ -253,13 +253,13 @@ a, svg, button {
   height: 100%;
   image-resolution: 100%;
 }
-.main__banner i {
+.main__banner span {
   position: absolute;
   background: rgb(244, 206, 137);
   border-radius: 100%;
   animation: animate linear infinite;
 }
-.main__banner i:nth-child(even) {
+.main__banner span:nth-child(even) {
   background: transparent;
   border: 1px solid rgb(244, 206, 137);
 }
