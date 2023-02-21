@@ -72,13 +72,14 @@ a, svg, button {
 
 .header {
   background-color: none;
-  padding: 1rem 0;
+  padding-top: 16px;
+  background-color: white;
   position: relative;
+  width: 100vw;
 }
 .header__logo {
   display: block;
-  padding: 1rem;
-  max-width: 15rem;
+  max-width: 240px;
   width: 100%;
   transition: 0.3s;
   margin: 0 auto;
@@ -89,62 +90,81 @@ a, svg, button {
 .header__logo img {
   width: 100%;
 }
-.header nav {
-  border-top: 1px dashed rgb(244, 206, 137);
-  padding-top: 2px;
-}
 .header__links {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0.1rem;
-  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-top: 0.0625rem dashed rgb(244, 206, 137);
+  margin-top: 24px;
+  padding: 24px 0;
+  gap: 16px;
+  width: 100%;
 }
 .header__links a {
+  display: block;
   color: black;
   height: 100%;
   text-decoration: none;
   font-weight: 999;
 }
 .header__links a svg {
-  width: 2rem;
+  width: 32px;
 }
 .header__links a:hover {
   color: rgb(244, 206, 137);
 }
 .header__links li:last-child a {
   background-color: rgb(244, 206, 137);
-  padding: 0.5rem 1rem;
-  border-radius: 100px;
-  border: 0.125rem dashed rgb(244, 206, 137);
+  padding: 8px 16px;
+  border-radius: 6.25rem;
+  border: 2px dashed rgb(244, 206, 137);
 }
 .header__links li:last-child a:hover {
   background-color: transparent;
   color: rgb(244, 206, 137);
 }
-.header .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-}
 .header__mobile-button {
   display: none;
 }
-@media (max-width: 638px) {
+@media (max-width: 927px) {
+  .header {
+    padding: 16px 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
+  .header + main {
+    margin-top: 4.92rem;
+  }
+  .header__logo {
+    max-width: 7rem;
+    margin: 0;
+  }
+  .header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .header__links {
-    position: relative;
-    background-color: none;
     flex-direction: column;
-    right: 0;
-    top: 99%;
-    height: calc(100vh - 6.0425rem);
+    justify-content: flex-start;
+    gap: 1.5rem;
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    max-width: 12rem;
     width: 100vh;
-    max-width: 10rem;
     align-items: flex-start;
-    padding: 1rem 1rem 5rem 1rem;
-    transform: translateX(100%);
+    padding: 16px;
+    padding-bottom: 5rem;
+    margin: 0;
+    border: none;
+    height: calc(100vh - 4.92rem);
     transition: 0.3s;
+    transform: translateX(100%);
   }
   .header__links.active {
     transform: translateX(0);
@@ -152,29 +172,24 @@ a, svg, button {
   .header__links li:last-child {
     margin-top: auto;
   }
-  .header__links li:last-child,
-  .header__links li:last-child a {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
   .header__mobile-button {
-    margin-left: 1rem;
+    margin-left: 16px;
     background-color: none;
     border: none;
     padding: 0;
-    width: 33px;
-    height: 25px;
+    width: 2.0625rem;
+    height: 1.5625rem;
     position: relative;
     display: block;
+    background: none;
   }
   .header__mobile-button span {
     background-color: rgb(72, 38, 1);
-    height: 5px;
+    height: 0.3125rem;
     width: 100%;
     position: absolute;
     left: 0;
-    border-radius: 0.5rem;
+    border-radius: 8px;
     transition: 0.3s;
   }
   .header__mobile-button span:first-child {
@@ -188,7 +203,7 @@ a, svg, button {
     bottom: 0;
   }
   .header__mobile-button.active span:nth-child(1) {
-    top: 9px;
+    top: 0.5625rem;
     transform: rotate(45deg);
   }
   .header__mobile-button.active span:nth-child(2) {
@@ -196,7 +211,7 @@ a, svg, button {
   }
   .header__mobile-button.active span:nth-child(3) {
     transform: rotate(-45deg);
-    bottom: 11.5px;
+    bottom: 0.7188rem;
   }
 }
 
@@ -210,9 +225,9 @@ a, svg, button {
   overflow: hidden;
 }
 .main__banner__box {
-  position: absolute;
+  position: relative;
   width: 28.125rem;
-  height: 28.125rem;
+  aspect-ratio: 1;
 }
 .main__banner__box::before {
   content: "";

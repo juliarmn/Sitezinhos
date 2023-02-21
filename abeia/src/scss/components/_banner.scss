@@ -12,9 +12,9 @@
     position: relative;
     overflow: hidden;
     &__box {
-      position: absolute;
+      position: relative;
       width: 28.125rem;
-      height: 28.125rem;
+      aspect-ratio: 1;
 
       &::before {
 
